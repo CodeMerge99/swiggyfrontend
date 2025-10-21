@@ -1,20 +1,3 @@
-// import React from 'react';
-
-// const RestaurantCard = ({ resData }) => {
-//   const { name, cuisines, avgRating, costForTwoMessage, sla } = resData;
-
-//   return (
-//     <div className='res-card'>
-//       <h3>{name}</h3>
-//       <p>{cuisines?.join(", ")}</p>
-//       <p>{avgRating} ⭐</p>
-//       <p>{costForTwoMessage}</p>
-//       <p>{sla?.slaString}</p>
-//     </div>
-//   );
-// };
-
-// export default RestaurantCard;
 import React from 'react';
 
 const RestaurantCard = ({ resData }) => {
