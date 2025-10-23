@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RestaurantCard from './RestaurantCard';
+import { Link } from 'react-router';
+import ShimmerUI from './ShimmerUI';
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -58,7 +60,7 @@ const Body = () => {
   };
 
   if (loading) {
-    return <div className="loading">Loading...</div>;
+    return (<ShimmerUI/>);
   }
 
   return (
@@ -93,7 +95,7 @@ const Body = () => {
             
             if (!resData) return null;
 
-            return <RestaurantCard key={resData.id || index} resData={resData} />;
+            return <Link key={resData.id || index} to={"/restaurants/" + resData.id}> <RestaurantCard  resData={resData} /> </Link>;
           })
         )}
       </div>
