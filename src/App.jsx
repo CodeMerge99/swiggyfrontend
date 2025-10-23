@@ -9,6 +9,7 @@ import {Routes,Route} from "react-router"
 import About from './components/About'
 import Contact from './components/Contact'
 import Error from './components/Error'
+import RestaurantMenu from './components/Restaurantmenu'
 function App() {
   
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Body/>}/>
         <Route path='/about'element={<About/>} />
         <Route path='/contact' element={<Contact/>}/>
+        <Route path="/restaurants/:resId" element={<RestaurantMenu/>}/>
         <Route path="/*" element={<Error/>}/>
        </Routes>
       </div>
