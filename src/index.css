@@ -9,7 +9,7 @@
 }
 .logo{
     width: 150px;
-    height:150px
+    height:150px;
 }
 .nav-items>ul{
     display: flex;
@@ -168,4 +168,13 @@ button.search:active {
 
 .login-btn:active {
     transform: translateY(0);
+}
+
+.user-card{
+    padding: 10px;
+    border:1px solid black;
+}
+.btn{
+    border:1px solid black;
+    padding: 5px;
 }
