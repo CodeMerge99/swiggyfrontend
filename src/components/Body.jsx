@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import RestaurantCard from './RestaurantCard';
 import { Link } from 'react-router';
 import ShimmerUI from './ShimmerUI';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -58,6 +59,14 @@ const Body = () => {
       handleSearch();
     }
   };
+
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus === false){
+    return (
+     
+        <h1>Looks like you are not connnected to the internet! Please Check your internet Connectivity</h1>
+    )
+  }
 
   if (loading) {
     return (<ShimmerUI/>);
