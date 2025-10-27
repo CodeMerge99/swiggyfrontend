@@ -1,6 +1,7 @@
 import ShimmerUI from "./ShimmerUI";
 import { useParams } from "react-router";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -23,15 +24,17 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
   
-  console.log(categories);
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h2>
+    <div className="text-center">
+      <h1 className="my-9 text-2xl font-bold">{name}</h1>
+      <h2 className="font-bold text-lg">
         {cuisines?.join(", ")} - {costForTwo}
       </h2>
       <h3>⭐ {avgRating}</h3>
+      {
+        categories.map((category) => <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card}/>)
+      }
     </div>
   );
 };
