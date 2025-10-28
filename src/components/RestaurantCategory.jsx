@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { FaArrowDown } from "react-icons/fa6";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data }) => {
+const RestaurantCategory = ({ data , showItems , setShowIndex}) => {
 
-  const [showItems,setShowItems] = useState(false);
 
   const handleClick =()=>{
-       setShowItems(!showItems);
+      setShowIndex();
   }
+
   return (
     <div>
         {/* {header} */}

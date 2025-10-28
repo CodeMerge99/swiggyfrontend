@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import RestaurantCard ,{withPromotedLabel} from './RestaurantCard';
 import { Link } from 'react-router';
 import ShimmerUI from './ShimmerUI';
 import useOnlineStatus from '../utils/useOnlineStatus';
+import UserContext from '../utils/UserContext';
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -70,6 +71,8 @@ const Body = () => {
     )
   }
 
+  const {loggedInUser,setUserName} = useContext(UserContext);
+
   if (loading) {
     return (<ShimmerUI/>);
   }
@@ -93,6 +96,10 @@ const Body = () => {
         <button className='filter-btn' onClick={handleTopRated}>
           Top Rated Restaurants
         </button>
+         <div className='m-4 p-4 flex items-center'>
+          <label>UserName : </label>
+           <input className='border border-black rounded-md'value={loggedInUser} onChange={(e)=>setUserName(e.target.value)}/>
+         </div>
       </div>
 
       <div className='res-container'>
